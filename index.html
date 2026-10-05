@@ -1,39 +1,82 @@
-<p>
-  <label for="word-input">text</label>
-  <input id="word-input" type="text" placeholder="enter something" />
-  
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATalog</title>
+    <link rel="stylesheet" href="style.css">
+     <script src="../ARGD4160P2fsfs/index.js" type="text/javascript" defer></script>
+     <link rel="stylesheet" href="https://use.typekit.net/uln7ewe.css">
 
-<p>
-  <label for="face-color">face color</label>
-  <input id="face-color" type="color" value="#ffff00" />
-  <output for="face-color"></output>
-</p>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <h1>CATalog</h1>
+            <p class="subtitle">meow meow meow</p>
+        </div>
+    </header>
 
-<p>
-  <label for="left-eye-x">left eye x</label>
-  <input id="left-eye-x" type="range" min="0" max="400" value="100" />
-  <label for="left-eye-y">left eye y</label>
-  <input id="left-eye-y" type="range" min="0" max="400" value="110" />
-</p>
+    <main class="main-content">
+        <!-- Controls Toolbar -->
+        <div class="toolbar">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search by name or breed...">
+            </div>
+            
+            <div class="filter-group">
+                <select id="genderFilter">
+                    <option value="">All Genders</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
 
-<p>
-  <label for="right-eye-x">right eye x</label>
-  <input id="right-eye-x" type="range" min="0" max="400" value="200" />
-  <label for="right-eye-y">right eye y</label>
-  <input id="right-eye-y" type="range" min="0" max="400" value="110" />
-</p>
+                <select id="breedFilter">
+                    <option value="">All Breeds</option>
+                </select>
 
-<p>
-  <label for="mouth-scale">mouth scale</label>
-  <input id="mouth-scale" type="range" min="0.1" max="3" step="0.1" value="1" />
-  <output for="mouth-scale"></output>
-</p>
+                <select id="sortSelect">
+                    <option value="name-asc">Sort by Name (A-Z)</option>
+                    <option value="age-asc">Sort by Age (Youngest)</option>
+                    <option value="age-desc">Sort by Age (Oldest)</option>
+                </select>
+            </div>
 
-<div id="bg">
-  <div id="face"></div>
-  <img id="leftEye" src="https://static.vecteezy.com/system/resources/thumbnails/068/083/383/small/blue-eye-icon-cartoon-style-simple-graphic-isolated-on-a-transparent-background-image-png.png" />
-  <img id="rightEye" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/805d3cf6-7d6e-49e8-94eb-7308079bc696/dhue8bn-6dae10ed-cbe8-4066-b34f-28d942f69a54.png/v1/fill/w_920,h_598/creepy_eye_png_solarmaker2005_s_creepy_eye_png_collection__by_solarmaker2005_dhue8bn-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTk4IiwicGF0aCI6Ii9mLzgwNWQzY2Y2LTdkNmUtNDllOC05NGViLTczMDgwNzliYzY5Ni9kaHVlOGJuLTZkYWUxMGVkLWNiZTgtNDA2Ni1iMzRmLTI4ZDk0MmY2OWE1NC5wbmciLCJ3aWR0aCI6Ijw9OTIwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.bsOk63azFOKbO8sqSJYQ5_DIXesqlNyqicxqzu98OeQ" />
-  <img id="mouth" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT17lSFQBM0TGIF67-K9qxOBC9enAG3BRNcMQgc5FP5WzT6Ic_ZsQyVveM&s=10" />
-  <h1 id="word">hello</h1>
-</div>
+            <div class="view-toggles">
+                <button id="cardViewBtn" class="toggle-btn active" title="Card View">Grid</button>
+                <button id="tableViewBtn" class="toggle-btn" title="Table View">Table</button>
+            </div>
+        </div>
+
+        <!-- Counter display -->
+        <div class="stats-bar">
+            Showing <span id="recordCount">0</span> meow meows
+        </div>
+
+        <!-- Card Container View -->
+        <div id="cardContainer" class="card-grid"></div>
+
+        <!-- Table Container View -->
+        <div id="tableContainer" class="table-container hidden">
+            <table class="archive-table">
+                <thead>
+                    <tr>
+                        <th>Specimen</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Breed</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 CATalog. meow meow meow.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
