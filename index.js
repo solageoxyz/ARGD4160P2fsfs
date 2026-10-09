@@ -1,195 +1,3 @@
-const catData = [
-  { 
-    "Name": "snow", 
-    "Gender": "male", 
-    "Breed": "flame point", 
-    "Age": 5 ,
-    "path": "images/snowyposter.jpg"
-  },
-   { 
-    "Name": "Boreum", 
-    "Gender": "male", 
-    "Breed": "tabby", 
-    "Age": 4 ,
-    "path": "images/boreum.jpg"
-  },
- { 
-    "Name": "gojo", 
-    "Gender": "male", 
-    "Breed": "flame point", 
-    "Age": 5 ,
-    "path": "images/gojo.PNG"
-  },
-   { 
-    "Name": "magic", 
-    "Gender": "female", 
-    "Breed": "tuxedo", 
-    "Age": 3 ,
-    "path": "images/magic.jpg"
-  },
-   { 
-    "Name": "bub", 
-    "Gender": "male", 
-    "Breed": "shorthair", 
-    "Age": 5 ,
-    "path": "images/bub.jpg"
-  },
-   { 
-    "Name": "cala", 
-    "Gender": "female", 
-    "Breed": "tabby", 
-    "Age": 7 ,
-    "path": "images/cala.jpeg"
-  },
-   { 
-    "Name": "soonie", 
-    "Gender": "male", 
-    "Breed": "tabby", 
-    "Age": 15 ,
-    "path": "images/soonie.jpg"
-  },
-   { 
-    "Name": "doongie", 
-    "Gender": "male", 
-    "Breed": "tabby", 
-    "Age": 13 ,
-    "path": "images/doongie.jpeg"
-  },
-   { 
-    "Name": "dori", 
-    "Gender": "male", 
-    "Breed": "tabby", 
-    "Age": 7 ,
-    "path": "images/dori.jpeg"
-  },
-   { 
-    "Name": "brandon", 
-    "Gender": "female", 
-    "Breed": "tabby", 
-    "Age": 4 ,
-    "path": "images/brandon.jpg"
-  },
-   { 
-    "Name": "mango", 
-    "Gender": "male", 
-    "Breed": "tabby", 
-    "Age": 3 ,
-    "path": "images/mango.jpeg"
-  },
-   { 
-    "Name": "eepy", 
-    "Gender": "female", 
-    "Breed": "tabby", 
-    "Age": 1 ,
-    "path": "images/eepy.jpeg"
-  },
-   { 
-    "Name": "girl", 
-    "Gender": "female", 
-    "Breed": "turtleshell", 
-    "Age": 4 ,
-    "path": "images/girl.jpeg"
-  },
-   { 
-    "Name": "grr", 
-    "Gender": "female", 
-    "Breed": "shorthair", 
-    "Age": 3 ,
-    "path": "images/grr.jpeg"
-  },
-   { 
-    "Name": "huh", 
-    "Gender": "male", 
-    "Breed": "shorthair", 
-    "Age": 5 ,
-    "path": "images/huh.jpeg"
-  },
-   { 
-    "Name": "kitten", 
-    "Gender": "male", 
-    "Breed": "tabby", 
-    "Age": 6 ,
-    "path": "images/kitten.jpg"
-  },
-   { 
-    "Name": "luna", 
-    "Gender": "female", 
-    "Breed": "shorthair", 
-    "Age": 8 ,
-    "path": "images/luna.jpeg"
-  },
-   { 
-    "Name": "maxwell", 
-    "Gender": "male", 
-    "Breed": "tuxedo", 
-    "Age": 3 ,
-    "path": "images/maxwell.jpeg"
-  },
-   { 
-    "Name": "mr boom", 
-    "Gender": "male", 
-    "Breed": "siamese", 
-    "Age": 4 ,
-    "path": "images/mr boom.jpeg"
-  },
-   { 
-    "Name": "jiggy", 
-    "Gender": "female", 
-    "Breed": "dwarf", 
-    "Age": 6 ,
-    "path": "images/jiggy.jpeg"
-  },
-   { 
-    "Name": "narum", 
-    "Gender": "female", 
-    "Breed": "shorthair", 
-    "Age": 4 ,
-    "path": "images/narum.jpg"
-  },
-   { 
-    "Name": "natsu", 
-    "Gender": "female", 
-    "Breed": "shorthair", 
-    "Age": 7 ,
-    "path": "images/natsu.jpg"
-  },
-   { 
-    "Name": "oye", 
-    "Gender": "male", 
-    "Breed": "tabby", 
-    "Age": 12 ,
-    "path": "images/oye.jpeg"
-  },
-   { 
-    "Name": "trex", 
-    "Gender": "male", 
-    "Breed": "tabby", 
-    "Age": 7 ,
-    "path": "images/trex.jpeg"
-  },
-   { 
-    "Name": "uncle bao", 
-    "Gender": "male", 
-    "Breed": "tabby", 
-    "Age": 13 ,
-    "path": "images/uncle bao.jpg"
-  },
-   { 
-    "Name": "uni", 
-    "Gender": "female", 
-    "Breed": "turtleshell", 
-    "Age": 4 ,
-    "path": "images/uni.jpeg"
-  },
-   { 
-    "Name": "wisp", 
-    "Gender": "female", 
-    "Breed": "flame point", 
-    "Age": 2 ,
-    "path": "images/wisp.jpeg"
-  },
-];
-
 // DOM Elements
 const searchInput = document.getElementById('searchInput');
 const genderFilter = document.getElementById('genderFilter');
@@ -207,6 +15,27 @@ const catModal = document.getElementById('catModal');
 const closeModal = document.getElementById('closeModal');
 const modalImage = document.getElementById('modalImage');
 const modalCaption = document.getElementById('modalCaption');
+
+// Global variable to hold fetched cat data
+let catData = [];
+
+// Fetch data from data.json
+async function loadCatData() {
+    try {
+        const response = await fetch('data.json');
+        if (!response.ok) {
+            throw new Error('Failed to load cat data');
+        }
+        catData = await response.json();
+        
+        // Initialize the app once data is loaded
+        populateBreeds();
+        renderArchive();
+    } catch (error) {
+        console.error('Error fetching cat data:', error);
+        recordCount.textContent = 'Error loading cats 😿';
+    }
+}
 
 // Initialize options for breed filter dropdown
 function populateBreeds() {
@@ -313,7 +142,7 @@ catModal.addEventListener('click', (e) => {
     }
 });
 
-// View toggle (fixed to use .hidden class properly)
+// View toggle
 cardViewBtn.addEventListener('click', () => {
     cardContainer.classList.remove('hidden');
     tableContainer.classList.add('hidden');
@@ -328,6 +157,5 @@ tableViewBtn.addEventListener('click', () => {
     tableViewBtn.classList.add('active');
 });
 
-// Initial load
-populateBreeds();
-renderArchive();
+// Load data on startup
+loadCatData();
