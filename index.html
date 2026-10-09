@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CATalog</title>
+    <title>CATalog 🐾</title>
+    <!-- Cute Google Fonts: Fredoka for headers & Quicksand for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
-     <script src="../ARGD4160P2fsfs/index.js" type="text/javascript" defer></script>
-     <link rel="stylesheet" href="https://use.typekit.net/uln7ewe.css">
-
 </head>
 <body>
     <header class="site-header">
         <div class="header-container">
-            <h1>CATalog</h1>
+            <h1><span>🐈‍⬛</span> CATalog <span>🐾</span></h1>
             <p class="subtitle">meow meow meow</p>
         </div>
     </header>
@@ -21,7 +23,7 @@
         <!-- Controls Toolbar -->
         <div class="toolbar">
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search by name or breed...">
+                <input type="text" id="searchInput" placeholder="🔍 Search kitty name or breed...">
             </div>
             
             <div class="filter-group">
@@ -43,14 +45,14 @@
             </div>
 
             <div class="view-toggles">
-                <button id="cardViewBtn" class="toggle-btn active" title="Card View">Grid</button>
-                <button id="tableViewBtn" class="toggle-btn" title="Table View">Table</button>
+                <button id="cardViewBtn" class="toggle-btn active" title="Card View">🐾 Grid</button>
+                <button id="tableViewBtn" class="toggle-btn" title="Table View">📋 Table</button>
             </div>
         </div>
 
         <!-- Counter display -->
         <div class="stats-bar">
-            Showing <span id="recordCount">0</span> meow meows
+             Showing <span id="recordCount">0</span>  meow meows 
         </div>
 
         <!-- Card Container View -->
@@ -73,8 +75,17 @@
         </div>
     </main>
 
+    <!-- Full Image Popup Modal -->
+    <div id="catModal" class="modal hidden">
+        <div class="modal-image-box">
+            <button id="closeModal" class="close-btn">&times;</button>
+            <img id="modalImage" src="" alt="Full size cat">
+            <div id="modalCaption" class="modal-caption"></div>
+        </div>
+    </div>
+
     <footer class="site-footer">
-        <p>&copy; 2026 CATalog. meow meow meow.</p>
+        <p>&copy; 2026 CATalog. Meow meow meow.</p>
     </footer>
 
     <script src="index.js"></script>

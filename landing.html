@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to CATalog 🐾</title>
+    <!-- Cute Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+
+        .landing-hero {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-card {
+            background: #ffffff;
+            border-radius: 28px;
+            border: 4px solid #a8d5ba;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 15px 35px rgba(143, 193, 166, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-emoji {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            animation: floatEmoji 3s ease-in-out infinite;
+        }
+
+        @keyframes floatEmoji {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-card h1 {
+            font-family: 'Fredoka', cursive;
+            font-size: 2.8rem;
+            color: #5c4b43;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-card p {
+            font-size: 1.15rem;
+            color: #6e7c74;
+            margin-bottom: 2rem;
+        }
+
+        .enter-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background-color: #5c4b43; /* Chocolate brown */
+            color: #ffffff;
+            font-family: 'Fredoka', cursive;
+            font-size: 1.3rem;
+            padding: 0.85rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(92, 75, 67, 0.25);
+            transition: all 0.25s ease;
+            border: 3px solid #5c4b43;
+        }
+
+        .enter-btn:hover {
+            background-color: #a8d5ba; /* Pastel mint on hover */
+            color: #5c4b43;
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 12px 25px rgba(168, 213, 186, 0.4);
+            border-color: #5c4b43;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <h1><span>🐱</span> CATalog <span>🐾</span></h1>
+            <p class="subtitle">i <3 cats</p>
+        </div>
+    </header>
+
+    <main class="landing-hero">
+        <div class="hero-card">
+            <div class="hero-emoji">🐱✨</div>
+            <h1>I like cats, I hope u like them too :3</h1>
+            <p>here are my favorite cats in my life</p>
+            
+            <!-- Link leading to your main catalog page (index.html) -->
+            <a href="index.html" class="enter-btn">
+                <span>🐾</span> Enter CATalog <span>🐾</span>
+            </a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 CATalog. Meow meow meow.</p>
+    </footer>
+</body>
+</html>
