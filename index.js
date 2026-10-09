@@ -1,4 +1,3 @@
-// DOM Elements
 const searchInput = document.getElementById('searchInput');
 const genderFilter = document.getElementById('genderFilter');
 const breedFilter = document.getElementById('breedFilter');
@@ -16,7 +15,6 @@ const closeModal = document.getElementById('closeModal');
 const modalImage = document.getElementById('modalImage');
 const modalCaption = document.getElementById('modalCaption');
 
-// Global variable to hold fetched cat data
 let catData = [];
 
 // Fetch data from data.json
@@ -37,7 +35,6 @@ async function loadCatData() {
     }
 }
 
-// Initialize options for breed filter dropdown
 function populateBreeds() {
     const breeds = [...new Set(catData.map(cat => cat.Breed))].sort();
     breeds.forEach(breed => {
@@ -48,7 +45,6 @@ function populateBreeds() {
     });
 }
 
-// Function to open the modal with just the cat's image
 function openCatModal(cat) {
     modalImage.src = cat.path;
     modalImage.alt = cat.Name;
@@ -56,12 +52,10 @@ function openCatModal(cat) {
     catModal.classList.remove('hidden');
 }
 
-// Function to close modal
 function closeCatModal() {
     catModal.classList.add('hidden');
 }
 
-// Render data based on filters and sorting
 function renderArchive() {
     const searchTerm = searchInput.value.toLowerCase().trim();
     const selectedGender = genderFilter.value;
@@ -91,7 +85,6 @@ function renderArchive() {
     // Update count
     recordCount.textContent = filtered.length;
 
-    // Render Cards
     cardContainer.innerHTML = '';
     filtered.forEach(cat => {
         const card = document.createElement('div');
@@ -110,7 +103,6 @@ function renderArchive() {
         cardContainer.appendChild(card);
     });
 
-    // Render table
     tableBody.innerHTML = '';
     filtered.forEach(cat => {
         const row = document.createElement('tr');
@@ -127,13 +119,11 @@ function renderArchive() {
     });
 }
 
-// Event listeners
 searchInput.addEventListener('input', renderArchive);
 genderFilter.addEventListener('change', renderArchive);
 breedFilter.addEventListener('change', renderArchive);
 sortSelect.addEventListener('change', renderArchive);
 
-// Modal Event Listeners
 closeModal.addEventListener('click', closeCatModal);
 catModal.addEventListener('click', (e) => {
     // Close if clicking outside the image container
@@ -142,7 +132,6 @@ catModal.addEventListener('click', (e) => {
     }
 });
 
-// View toggle
 cardViewBtn.addEventListener('click', () => {
     cardContainer.classList.remove('hidden');
     tableContainer.classList.add('hidden');
@@ -157,5 +146,4 @@ tableViewBtn.addEventListener('click', () => {
     tableViewBtn.classList.add('active');
 });
 
-// Load data on startup
 loadCatData();
