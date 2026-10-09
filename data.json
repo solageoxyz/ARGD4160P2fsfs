@@ -25,14 +25,14 @@
    "Gender": "female",
    "Breed": "tuxedo",
    "Age": 3,
-   "path": "images/magic.JPG"
+   "path": "images/Magic.JPG"
  },
  {
    "Name": "bub",
    "Gender": "male",
    "Breed": "shorthair",
    "Age": 5,
-    "path": "images/bub.JPG"
+    "path": "images/Bub.JPG"
  },
  {
    "Name": "cala",
