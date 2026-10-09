@@ -4,189 +4,189 @@ const catData = [
     "Gender": "male", 
     "Breed": "flame point", 
     "Age": 5 ,
-    "path": "/images/snowyposter.jpg"
+    "path": "images/snowyposter.jpg"
   },
    { 
     "Name": "Boreum", 
     "Gender": "male", 
     "Breed": "tabby", 
     "Age": 4 ,
-    "path": "/images/boreum.jpg"
+    "path": "images/boreum.jpg"
   },
  { 
     "Name": "gojo", 
     "Gender": "male", 
     "Breed": "flame point", 
     "Age": 5 ,
-    "path": "/images/gojo.PNG"
+    "path": "images/gojo.PNG"
   },
    { 
     "Name": "magic", 
     "Gender": "female", 
     "Breed": "tuxedo", 
     "Age": 3 ,
-    "path": "/images/magic.jpg"
+    "path": "images/magic.jpg"
   },
    { 
     "Name": "bub", 
     "Gender": "male", 
     "Breed": "shorthair", 
     "Age": 5 ,
-    "path": "/images/bub.jpg"
+    "path": "images/bub.jpg"
   },
    { 
     "Name": "cala", 
     "Gender": "female", 
     "Breed": "tabby", 
     "Age": 7 ,
-    "path": "/images/cala.jpeg"
+    "path": "images/cala.jpeg"
   },
    { 
     "Name": "soonie", 
     "Gender": "male", 
     "Breed": "tabby", 
     "Age": 15 ,
-    "path": "/images/soonie.jpg"
+    "path": "images/soonie.jpg"
   },
    { 
     "Name": "doongie", 
     "Gender": "male", 
     "Breed": "tabby", 
     "Age": 13 ,
-    "path": "/images/doongie.jpeg"
+    "path": "images/doongie.jpeg"
   },
    { 
     "Name": "dori", 
     "Gender": "male", 
     "Breed": "tabby", 
     "Age": 7 ,
-    "path": "/images/dori.jpeg"
+    "path": "images/dori.jpeg"
   },
    { 
     "Name": "brandon", 
     "Gender": "female", 
     "Breed": "tabby", 
     "Age": 4 ,
-    "path": "/images/brandon.jpg"
+    "path": "images/brandon.jpg"
   },
    { 
     "Name": "mango", 
     "Gender": "male", 
     "Breed": "tabby", 
     "Age": 3 ,
-    "path": "/images/mango.jpeg"
+    "path": "images/mango.jpeg"
   },
    { 
     "Name": "eepy", 
     "Gender": "female", 
     "Breed": "tabby", 
     "Age": 1 ,
-    "path": "/images/eepy.jpeg"
+    "path": "images/eepy.jpeg"
   },
    { 
     "Name": "girl", 
     "Gender": "female", 
     "Breed": "turtleshell", 
     "Age": 4 ,
-    "path": "/images/girl.jpeg"
+    "path": "images/girl.jpeg"
   },
    { 
     "Name": "grr", 
     "Gender": "female", 
     "Breed": "shorthair", 
     "Age": 3 ,
-    "path": "/images/grr.jpeg"
+    "path": "images/grr.jpeg"
   },
    { 
     "Name": "huh", 
     "Gender": "male", 
     "Breed": "shorthair", 
     "Age": 5 ,
-    "path": "/images/huh.jpeg"
+    "path": "images/huh.jpeg"
   },
    { 
     "Name": "kitten", 
     "Gender": "male", 
     "Breed": "tabby", 
     "Age": 6 ,
-    "path": "/images/kitten.jpg"
+    "path": "images/kitten.jpg"
   },
    { 
     "Name": "luna", 
     "Gender": "female", 
     "Breed": "shorthair", 
     "Age": 8 ,
-    "path": "/images/luna.jpeg"
+    "path": "images/luna.jpeg"
   },
    { 
     "Name": "maxwell", 
     "Gender": "male", 
     "Breed": "tuxedo", 
     "Age": 3 ,
-    "path": "/images/maxwell.jpeg"
+    "path": "images/maxwell.jpeg"
   },
    { 
     "Name": "mr boom", 
     "Gender": "male", 
     "Breed": "siamese", 
     "Age": 4 ,
-    "path": "/images/mr boom.jpeg"
+    "path": "images/mr boom.jpeg"
   },
    { 
     "Name": "jiggy", 
     "Gender": "female", 
     "Breed": "dwarf", 
     "Age": 6 ,
-    "path": "/images/jiggy.jpeg"
+    "path": "images/jiggy.jpeg"
   },
    { 
     "Name": "narum", 
     "Gender": "female", 
     "Breed": "shorthair", 
     "Age": 4 ,
-    "path": "/images/narum.jpg"
+    "path": "images/narum.jpg"
   },
    { 
     "Name": "natsu", 
     "Gender": "female", 
     "Breed": "shorthair", 
     "Age": 7 ,
-    "path": "/images/natsu.jpg"
+    "path": "images/natsu.jpg"
   },
    { 
     "Name": "oye", 
     "Gender": "male", 
     "Breed": "tabby", 
     "Age": 12 ,
-    "path": "/images/oye.jpeg"
+    "path": "images/oye.jpeg"
   },
    { 
     "Name": "trex", 
     "Gender": "male", 
     "Breed": "tabby", 
     "Age": 7 ,
-    "path": "/images/trex.jpeg"
+    "path": "images/trex.jpeg"
   },
    { 
     "Name": "uncle bao", 
     "Gender": "male", 
     "Breed": "tabby", 
     "Age": 13 ,
-    "path": "/images/uncle bao.jpg"
+    "path": "images/uncle bao.jpg"
   },
    { 
     "Name": "uni", 
     "Gender": "female", 
     "Breed": "turtleshell", 
     "Age": 4 ,
-    "path": "/images/uni.jpeg"
+    "path": "images/uni.jpeg"
   },
    { 
     "Name": "wisp", 
     "Gender": "female", 
     "Breed": "flame point", 
     "Age": 2 ,
-    "path": "/images/wisp.jpeg"
+    "path": "images/wisp.jpeg"
   },
 ];
 
@@ -313,25 +313,7 @@ catModal.addEventListener('click', (e) => {
     }
 });
 
-// View toggle
-cardViewBtn.addEventListener('click', () => {
-    cardContainer.style.display = 'grid';
-    tableContainer.style.display = 'none';
-    cardViewBtn.classList.add('active');
-    tableViewBtn.classList.remove('active');
-});
-
-tableViewBtn.addEventListener('click', () => {
-    cardContainer.style.display = 'none';
-    tableContainer.style.display = 'block';
-    cardViewBtn.classList.remove('active');
-    tableViewBtn.classList.add('active');
-});
-
-// Initial load
-populateBreeds();
-renderArchive();
-// View toggle
+// View toggle (fixed to use .hidden class properly)
 cardViewBtn.addEventListener('click', () => {
     cardContainer.classList.remove('hidden');
     tableContainer.classList.add('hidden');
@@ -345,3 +327,7 @@ tableViewBtn.addEventListener('click', () => {
     cardViewBtn.classList.remove('active');
     tableViewBtn.classList.add('active');
 });
+
+// Initial load
+populateBreeds();
+renderArchive();
